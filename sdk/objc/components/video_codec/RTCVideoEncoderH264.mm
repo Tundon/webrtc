@@ -174,6 +174,8 @@ void compressionOutputCallback(void *encoder,
 // returned. The user must initialize the encoder with a resolution and
 // framerate conforming to the selected H264 level regardless.
 CFStringRef ExtractProfile(const webrtc::H264::ProfileLevelId &profile_level_id) {
+  return kVTProfileLevel_H264_Baseline_AutoLevel;
+  /*
   switch (profile_level_id.profile) {
     case webrtc::H264::kProfileConstrainedBaseline:
     case webrtc::H264::kProfileBaseline:
@@ -270,6 +272,7 @@ CFStringRef ExtractProfile(const webrtc::H264::ProfileLevelId &profile_level_id)
           return kVTProfileLevel_H264_High_AutoLevel;
       }
   }
+  */
 }
 
 // The function returns the max allowed sample rate (pixels per second) that
